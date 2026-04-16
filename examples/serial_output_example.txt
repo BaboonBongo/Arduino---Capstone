@@ -1,0 +1,92 @@
+--- Serial Output Example ---
+Captured from Arduino Load Cell System
+Load Cell: 5kg | Parts: 2.3g each | Packaging: 1.5g
+Date: 2026-04-16
+
+=== STARTUP MESSAGES ===
+
+========================================
+  Load Cell Weight Counting System
+  5kg Load Cell + HX711
+========================================
+
+[INIT] Starting HX711...
+[OK] HX711 detected.
+[CONFIG] Calibration factor: -420.5312
+[INIT] Taring scale... Keep platform empty!
+[OK] Tare complete.
+[CONFIG] Weight per part: 2.30 g
+[CONFIG] Packaging weight: 1.50 g
+
+[READY] System operational.
+[TIP] Send 'C' to enter calibration mode.
+[TIP] Send 'T' to tare (zero) the scale.
+
+
+=== EMPTY SCALE (TARED) ===
+
+{"weight_gross":0.05,"weight_net":0.00,"count_estimate":0.00,"count_rounded":0,"stable":true,"zero_drift":false,"weight_per_part":2.30}
+{"weight_gross":0.03,"weight_net":0.00,"count_estimate":0.00,"count_rounded":0,"stable":true,"zero_drift":false,"weight_per_part":2.30}
+{"weight_gross":-0.02,"weight_net":0.00,"count_estimate":0.00,"count_rounded":0,"stable":true,"zero_drift":false,"weight_per_part":2.30}
+
+
+=== PLACING PARTS (STABILIZING) ===
+
+{"weight_gross":45.82,"weight_net":44.32,"count_estimate":19.27,"count_rounded":19,"stable":false,"zero_drift":false,"weight_per_part":2.30}
+{"weight_gross":47.15,"weight_net":45.65,"count_estimate":19.85,"count_rounded":20,"stable":false,"zero_drift":false,"weight_per_part":2.30}
+{"weight_gross":46.52,"weight_net":45.02,"count_estimate":19.57,"count_rounded":20,"stable":false,"zero_drift":false,"weight_per_part":2.30}
+{"weight_gross":46.38,"weight_net":44.88,"count_estimate":19.51,"count_rounded":20,"stable":false,"zero_drift":false,"weight_per_part":2.30}
+{"weight_gross":46.42,"weight_net":44.92,"count_estimate":19.53,"count_rounded":20,"stable":false,"zero_drift":false,"weight_per_part":2.30}
+
+
+=== STABLE READING (20 PARTS) ===
+
+{"weight_gross":46.40,"weight_net":44.90,"count_estimate":19.52,"count_rounded":20,"stable":true,"zero_drift":false,"weight_per_part":2.30}
+{"weight_gross":46.41,"weight_net":44.91,"count_estimate":19.53,"count_rounded":20,"stable":true,"zero_drift":false,"weight_per_part":2.30}
+{"weight_gross":46.39,"weight_net":44.89,"count_estimate":19.52,"count_rounded":20,"stable":true,"zero_drift":false,"weight_per_part":2.30}
+{"weight_gross":46.40,"weight_net":44.90,"count_estimate":19.52,"count_rounded":20,"stable":true,"zero_drift":false,"weight_per_part":2.30}
+
+
+=== LARGER BATCH (50 PARTS) ===
+
+{"weight_gross":116.52,"weight_net":115.02,"count_estimate":50.01,"count_rounded":50,"stable":true,"zero_drift":false,"weight_per_part":2.30}
+{"weight_gross":116.50,"weight_net":115.00,"count_estimate":50.00,"count_rounded":50,"stable":true,"zero_drift":false,"weight_per_part":2.30}
+{"weight_gross":116.53,"weight_net":115.03,"count_estimate":50.01,"count_rounded":50,"stable":true,"zero_drift":false,"weight_per_part":2.30}
+
+
+=== TARE COMMAND (SENT 'T') ===
+
+[TARE] Zeroing scale...
+[TARE] Done. Scale zeroed.
+
+
+=== STATUS COMMAND (SENT 'S') ===
+
+── System Status ──
+  Calibration factor: -420.5312
+  Weight per part: 2.30 g
+  Packaging weight: 1.50 g
+  Current weight: 0.02 g
+  Stable: YES
+  Stability counter: 8/8
+  Valid readings: 15
+  Zero drift warning: NO
+
+
+=== ERROR: SENSOR DISCONNECTED ===
+
+[ERROR] Sensor disconnected. Retrying...
+{"error":"HX711_NOT_CONNECTED","stable":false,"weight_gross":0.00}
+[ERROR] Sensor disconnected. Retrying...
+{"error":"HX711_NOT_CONNECTED","stable":false,"weight_gross":0.00}
+[OK] HX711 reconnected!
+[RESET] Resetting system...
+[TARE] Zeroing scale...
+[TARE] Done. Scale zeroed.
+[RESET] System reset complete.
+
+
+=== ZERO DRIFT WARNING (DEBUG MODE) ===
+
+[WARN] Zero drift detected. Consider re-taring.
+{"weight_gross":1.23,"weight_net":0.00,"count_estimate":0.00,"count_rounded":0,"stable":true,"zero_drift":true,"weight_per_part":2.30}
